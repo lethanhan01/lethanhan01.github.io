@@ -1,12 +1,15 @@
 "use client";
 
-import { navLinks } from "@/data/content";
 import { cn } from "@/lib/utils";
+import { useLocaleContent } from "@/providers/locale-provider";
+import { LocaleSwitcher } from "./locale-switcher";
+import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
+  const { content } = useLocaleContent();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,7 +42,7 @@ export function Navbar() {
           LTA
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
+          {content.navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -48,6 +51,8 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <LocaleSwitcher />
+          <ThemeToggle />
         </nav>
         <button
           className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800 md:hidden"
@@ -65,7 +70,7 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto flex max-w-6xl flex-col gap-2 pt-3">
-          {navLinks.map((link) => (
+          {content.navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -75,6 +80,10 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <div className="flex items-center gap-3 pt-2">
+            <LocaleSwitcher />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

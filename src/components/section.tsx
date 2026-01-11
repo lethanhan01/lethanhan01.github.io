@@ -13,7 +13,7 @@ export function Section({ id, className, children }: SectionProps) {
       id={id}
       className={cn(
         "py-20",
-        "bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100",
+        "bg-[color:var(--color-background)] text-[color:var(--color-foreground)]",
         className,
       )}
     >

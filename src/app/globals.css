@@ -1,28 +1,124 @@
 @import "tailwindcss";
 
+/* Design tokens: chỉnh tại đây để đổi màu toàn site */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light palette */
+  --bg-light: #f8fafc;
+  --bg-alt-light: #ffffff;
+  --surface-light: #e2e8f0;
+  --card-light: #ffffff;
+  --border-light: #e2e8f0;
+  --muted-light: #64748b;
+  --text-light: #0f172a;
+  --heading-light: #0b1222;
+  --primary-light: #2563eb;
+  --primary-weak-light: #dbeafe;
+  --secondary-light: #7c3aed;
+  --accent-light: #ec4899;
+
+  /* Dark palette */
+  --bg-dark: #0b1222;
+  --bg-alt-dark: #0f172a;
+  --surface-dark: #111827;
+  --card-dark: #0f172a;
+  --border-dark: #1f2937;
+  --muted-dark: #94a3b8;
+  --text-dark: #e2e8f0;
+  --heading-dark: #f8fafc;
+  --primary-dark: #60a5fa;
+  --primary-weak-dark: #1e3a8a;
+  --secondary-dark: #c084fc;
+  --accent-dark: #f472b6;
+
+  /* Current theme values (default light; overridden by .dark) */
+  --color-background: var(--bg-light);
+  --color-foreground: var(--text-light);
+  --color-surface: var(--surface-light);
+  --color-card: var(--card-light);
+  --color-border: var(--border-light);
+  --color-muted: var(--muted-light);
+  --color-heading: var(--heading-light);
+  --color-primary: var(--primary-light);
+  --color-primary-weak: var(--primary-weak-light);
+  --color-secondary: var(--secondary-light);
+  --color-accent: var(--accent-light);
+}
+
+/* Dark mode driven by next-themes (.dark class on <html>) */
+:root.dark {
+  --color-background: var(--bg-dark);
+  --color-foreground: var(--text-dark);
+  --color-surface: var(--surface-dark);
+  --color-card: var(--card-dark);
+  --color-border: var(--border-dark);
+  --color-muted: var(--muted-dark);
+  --color-heading: var(--heading-dark);
+  --color-primary: var(--primary-dark);
+  --color-primary-weak: var(--primary-weak-dark);
+  --color-secondary: var(--secondary-dark);
+  --color-accent: var(--accent-dark);
+}
+
+/* Optional: respect system preference on first load (no JS) */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-background: var(--bg-dark);
+    --color-foreground: var(--text-dark);
+    --color-surface: var(--surface-dark);
+    --color-card: var(--card-dark);
+    --color-border: var(--border-dark);
+    --color-muted: var(--muted-dark);
+    --color-heading: var(--heading-dark);
+    --color-primary: var(--primary-dark);
+    --color-primary-weak: var(--primary-weak-dark);
+    --color-secondary: var(--secondary-dark);
+    --color-accent: var(--accent-dark);
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* map token -> tailwind vars */
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+  --color-heading: var(--color-heading);
+  --color-primary: var(--color-primary);
+  --color-primary-weak: var(--color-primary-weak);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utility helpers for surfaces & text */
+.surface-card {
+  background: var(--color-card);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+}
+
+.surface-ghost {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-heading {
+  color: var(--color-heading);
 }
 
 html {
