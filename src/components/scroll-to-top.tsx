@@ -23,7 +23,7 @@ export function ScrollToTop() {
           behavior: "smooth",
         })
       }
-      className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-pink-500 text-white shadow-xl transition hover:scale-105 hover:shadow-2xl"
+      className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[color:var(--color-primary)] to-[color:var(--color-secondary)] text-white shadow-xl transition hover:scale-105 hover:shadow-2xl"
       aria-label="Scroll to top"
     >
       <ArrowUp className="h-5 w-5" />

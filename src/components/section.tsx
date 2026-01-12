@@ -12,7 +12,7 @@ export function Section({ id, className, children }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "py-20",
+        "section-padding",
         "bg-[color:var(--color-background)] text-[color:var(--color-foreground)]",
         className,
       )}
