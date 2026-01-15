@@ -59,6 +59,14 @@
   /* Component-specific tokens */
   --color-hero-cta-bg: rgba(255, 255, 255, 0.96);
   --color-hero-cta-fg: #0f172a;
+  --color-hero-text: #ffffff;
+  --color-hero-muted: rgba(255, 255, 255, 0.85);
+  --color-hero-chip-bg: rgba(255, 255, 255, 0.18);
+  --color-hero-chip-text: #ffffff;
+  --color-hero-chip-border: rgba(255, 255, 255, 0.35);
+  --color-hero-outline: rgba(255, 255, 255, 0.6);
+  --color-hero-icon-bg: rgba(255, 255, 255, 0.1);
+  --color-hero-icon-bg-hover: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode driven by next-themes (.dark class on <html>) */
@@ -89,6 +97,14 @@
 
   --color-hero-cta-bg: rgba(255, 255, 255, 0.96);
   --color-hero-cta-fg: #0f172a;
+  --color-hero-text: #ffffff;
+  --color-hero-muted: rgba(255, 255, 255, 0.85);
+  --color-hero-chip-bg: rgba(255, 255, 255, 0.16);
+  --color-hero-chip-text: #ffffff;
+  --color-hero-chip-border: rgba(255, 255, 255, 0.3);
+  --color-hero-outline: rgba(255, 255, 255, 0.6);
+  --color-hero-icon-bg: rgba(255, 255, 255, 0.1);
+  --color-hero-icon-bg-hover: rgba(255, 255, 255, 0.2);
 }
 
 /* Optional: respect system preference on first load (no JS) */

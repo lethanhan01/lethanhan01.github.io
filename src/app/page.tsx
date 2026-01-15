@@ -85,40 +85,40 @@ function HeroSection({ hero }: { hero: PortfolioContent["hero"] }) {
   return (
     <Section
       id="home"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-[color:var(--color-primary)] via-[color:var(--color-secondary)] to-[color:var(--color-primary)] py-28 text-white"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[color:var(--color-primary)] via-[color:var(--color-secondary)] to-[color:var(--color-primary)] py-28 text-[color:var(--color-hero-text)]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_40%)]" />
       <div className="relative">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[color:var(--color-hero-chip-border)] bg-[color:var(--color-hero-chip-bg)] px-4 py-2 text-sm font-medium text-[color:var(--color-hero-chip-text)] backdrop-blur">
           <UserRound className="h-4 w-4" />
           {hero.title}
         </p>
-        <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+        <h1 className="text-4xl font-semibold leading-tight text-[color:var(--color-hero-text)] sm:text-5xl">
           {hero.greeting}{" "}
           <span className="text-[color:var(--color-primary-weak)]">
             {hero.name}
           </span>
         </h1>
-        <p className="mt-5 max-w-2xl text-lg text-white/85">
+        <p className="mt-5 max-w-2xl text-lg text-[color:var(--color-hero-muted)]">
           {hero.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href={hero.primaryCta.href}
-            className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-[color:var(--color-hero-cta-bg)] px-5 py-3 text-sm font-semibold text-[color:var(--color-hero-cta-fg)] shadow-sm transition hover:translate-y-[-2px] hover:bg-white/95 hover:shadow-xl"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-hero-outline)] bg-[color:var(--color-hero-cta-bg)] px-5 py-3 text-sm font-semibold text-[color:var(--color-hero-cta-fg)] shadow-sm transition hover:translate-y-[-2px] hover:shadow-xl"
           >
             <LayoutGrid className="h-4 w-4" />
             {hero.primaryCta.label}
           </Link>
           <Link
             href={hero.secondaryCta.href}
-            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-hero-outline)] px-5 py-3 text-sm font-semibold text-[color:var(--color-hero-text)] transition hover:bg-[color:var(--color-hero-chip-bg)]"
           >
             <Mail className="h-4 w-4" />
             {hero.secondaryCta.label}
           </Link>
         </div>
-        <div className="mt-10 flex items-center gap-4 text-white/80">
+        <div className="mt-10 flex items-center gap-4 text-[color:var(--color-hero-muted)]">
           {hero.socials.map((social) => {
             const Icon = iconMap[social.icon as keyof typeof iconMap];
             return (
@@ -126,7 +126,7 @@ function HeroSection({ hero }: { hero: PortfolioContent["hero"] }) {
                 key={social.label}
                 href={social.href}
                 target="_blank"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[color:var(--color-hero-icon-bg)] transition hover:bg-[color:var(--color-hero-icon-bg-hover)]"
                 aria-label={social.label}
               >
                 <Icon className="h-5 w-5" />
